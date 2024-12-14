@@ -1,5 +1,5 @@
 import numpy as np
-import cv2
+
 
 image = cv2.imread("C:/Users/rudyp/Alin-thursday/logo.jpg")
 
