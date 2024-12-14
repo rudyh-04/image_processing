@@ -10,7 +10,7 @@ def select_image_file():
         filetypes=[("Image Files", ".png;.jpeg;*.jpg")],
         title="Select an Image File"
     )
-    return file_path
+    return image_path
 
 # Function to apply rotation
 def rotate_image(image, angle):
