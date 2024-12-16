@@ -38,15 +38,15 @@ def main():
      #Uploaded an image file
 uploaded_file = st.file_uploader("Choose an image...", type=["png", "jpeg", "jpg"])
 
-   if uploaded _file is not none:
-    #Load the selected image
-    image = cv2.imdecode(np.frombuffer(uploaded_file.read(), np.uint8), cv2.IMREAD_COLOR)
-
-   if image is None:
+   if uploaded_file is not None:
+        # Load the selected image
+        image = cv2.imdecode(np.frombuffer(uploaded_file.read(), np.uint8), cv2.IMREAD_COLOR)
+        
+        if image is None:
             st.error("Failed to load the image.")
             return
 
- # Perform transformations
+        # Perform transformations
         rotated = rotate_image(image, 30)  # Rotate by 30 degrees
         scaled = scale_image(image, 0.8, 1.2)  # Scale by 0.8x width and 1.2x height
         translated = translate_image(image, 50, 30)  # Translate by (50, 30) pixels
@@ -61,6 +61,5 @@ uploaded_file = st.file_uploader("Choose an image...", type=["png", "jpeg", "jpg
 
 if __name__ == "__main__":
     main()
-                                                            
 
 
