@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 from tkinter import Tk, filedialog
+import streamlit as st
 
 # Function to select an image file
 def select_image_file():
