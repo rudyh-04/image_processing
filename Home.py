@@ -15,7 +15,7 @@ st.subheader('Streamlit Application The Result of Project Image Processing Grup 
 st.sidebar.header('Feedback')
 
 option = st.sidebar.selectbox(
-    'Please Select',
+    'Please choose to help us develop',
     ('Good', 'Not Good','Observation')
 )
 option = st.sidebar.button('save')
