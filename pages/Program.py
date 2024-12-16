@@ -6,7 +6,7 @@ from tkinter import Tk, filedialog
 def select_image_file():
      root = Tk ()
      root.withdraw()  # Hide the root window
-     fille_path = filedialog.askopenfilename(
+     file_path = filedialog.askopenfilename(
         filetypes=[("Image Files", ".png;.jpeg;*.jpg")],
         title="Select an Image File"
     )
