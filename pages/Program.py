@@ -36,7 +36,7 @@ def main():
      st.title("Image Transformation App")
      
      #Uploaded an image file
-uploaded _file = st.file_uploder{"choose an image ...", type=["png", "jpeg", "jpg""]
+uploaded_file = st.file_uploader("Choose an image...", type=["png", "jpeg", "jpg"])
 
    if uploaded _file is not none:
     #Load the selected image
