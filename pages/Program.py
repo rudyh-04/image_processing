@@ -1,17 +1,7 @@
-import cv2:
+import cv2
 import numpy as np
 from tkinter import Tk, filedialog
 import streamlit as st
-
-# Function to select an image file
-def select_image_file():
-     root = Tk ()
-     root.withdraw()  # Hide the root window
-     file_path = filedialog.askopenfilename(
-        filetypes=[("Image Files", ".png;.jpeg;*.jpg")],
-        title="Select an Image File"
-    )
-     return file_path
 
 # Function to apply rotation
 def rotate_image(image, angle):
@@ -42,32 +32,35 @@ def skew_image(image, shear_x, shear_y):
     return skewed_image
      
 # Main script
-if _name_ == "_main_":
-    # Select an image file
-    image_path = select_image_file()
-    if not image_path:
-        print ("No file selected. Exiting.")
-        exit ()
+def main():
+     st.title("Image Transformation App")
+     
+     #Uploaded an image file
+uploaded _file = st.file_uploder{"choose an image ...", type=["png", "jpeg", "jpg""]
 
-    # Load the selected image
-    image = cv2.imread(image_path)
-    if image is None:
-        print ("Failed to load the image. Exiting.")
-        exit ()
+   if uploaded _file is not none:
+    #Load the selected image
+    image = cv2.imdecode(np.frombuffer(uploaded_file.read(), np.uint8), cv2.IMREAD_COLOR)
 
-    # Perform transformations
-    rotated = rotate_image(image, 30)  # Rotate by 30 degrees
-    scaled = scale_image(image, 0.8, 1.2)  # Scale by 0.8x width and 1.2x height
-    translated = translate_image(image, 50, 30)  # Translate by (50, 30) pixels
-    skewed = skew_image(image, 0.2, 0.1)  # Skew with factors 0.2 (x-axis) and 0.1 (y-axis)
+   if image is None:
+            st.error("Failed to load the image.")
+            return
 
-    # Display results
-    cv2.imshow("Original Image", image)
-    cv2.imshow("Rotated Image", rotated)
-    cv2.imshow("Scaled Image", scaled)
-    cv2.imshow("Translated Image", translated)
-    cv2.imshow("Skewed Image", skewed)
+ # Perform transformations
+        rotated = rotate_image(image, 30)  # Rotate by 30 degrees
+        scaled = scale_image(image, 0.8, 1.2)  # Scale by 0.8x width and 1.2x height
+        translated = translate_image(image, 50, 30)  # Translate by (50, 30) pixels
+        skewed = skew_image(image, 0.2, 0.1)  # Skew with factors 0.2 (x-axis) and 0.1 (y-axis)
 
-    # Wait for user input and close windows
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+        # Display results
+        st.image(image, caption="Original Image", channels="BGR")
+        st.image(rotated, caption="Rotated Image", channels="BGR")
+        st.image(scaled, caption="Scaled Image", channels="BGR")
+        st.image(translated, caption="Translated Image", channels="BGR")
+        st.image(skewed, caption="Skewed Image", channels="BGR")
+
+if __name__ == "__main__":
+    main()
+                                                            
+
+
