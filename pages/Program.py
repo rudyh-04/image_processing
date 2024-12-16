@@ -29,21 +29,21 @@ def skew_image(image, shear_x, shear_y):
     shear_matrix = np.float32([[1, shear_x, 0], [shear_y, 1, 0]])
     skewed_image = cv2.warpAffine(image, shear_matrix, (w, h))
     return skewed_image
-     
+
 # Main script
 def main():
-     st.title("Image Transformation App")
-     
-     #Uploaded an image file
-uploaded_file = st.file_uploader("Choose an image...", type=["png", "jpeg", "jpg"])
+    st.title("Image Transformation App")
 
-if uploaded_file is not None:
+    # Upload an image file
+    uploaded_file = st.file_uploader("Choose an image...", type=["png", "jpeg", "jpg"])
+    
+    if uploaded_file is not None:
         # Load the selected image
         image = cv2.imdecode(np.frombuffer(uploaded_file.read(), np.uint8), cv2.IMREAD_COLOR)
         
         if image is None:
             st.error("Failed to load the image.")
-        return
+            return
 
         # Perform transformations
         rotated = rotate_image(image, 30)  # Rotate by 30 degrees
@@ -60,5 +60,5 @@ if uploaded_file is not None:
 
 if __name__ == "__main__":
     main()
-
-
+     
+     
