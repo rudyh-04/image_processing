@@ -1,6 +1,5 @@
 import cv2
 import numpy as np
-from tkinter import Tk, filedialog
 import streamlit as st
 
 # Function to apply rotation
