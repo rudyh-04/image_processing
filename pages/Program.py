@@ -39,6 +39,7 @@ def skew_image(image, shear_x, shear_y):
     shear_matrix = np.float32([[1, shear_x, 0], [shear_y, 1, 0]])
     skewed_image = cv2.warpAffine(image, shear_matrix, (w, h))
     return skewed_image
+     
 # Main script
 if _name_ == "_main_":
     # Select an image file
