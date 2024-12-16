@@ -43,7 +43,7 @@ if uploaded_file is not None:
         
         if image is None:
             st.error("Failed to load the image.")
-            return
+        return
 
         # Perform transformations
         rotated = rotate_image(image, 30)  # Rotate by 30 degrees
