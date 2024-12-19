@@ -64,7 +64,4 @@ if __name__ == "__main__":
     if not image_path:
         print ("No file selected. Exiting.")
         
-
-    main()
-     
      
