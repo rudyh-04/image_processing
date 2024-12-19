@@ -2,6 +2,6 @@ numpy==1.21.2
 pandas==1.16.0
 streamlit
 pillow==10.4.0
-opencv-python==4.10.0.84
+opencv-python
 matplotlib==1.16.0
 scikit-learn==1.5.1
