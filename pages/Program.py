@@ -60,7 +60,6 @@ def main():
         st.image(skewed, caption="Skewed Image", channels="BGR")
 
 if __name__ == "__main__":
-    image = select_image_file()
     if not image:
         print ("No file selected. Exiting.")
         
