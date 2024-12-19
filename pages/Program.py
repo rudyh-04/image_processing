@@ -39,7 +39,7 @@ def main():
     # Upload an image file
     uploaded_file = st.file_uploader("Choose an image...", type=["png", "jpeg", "jpg"])
 
-    if uploaded_file is none:
+    if uploaded_file is not none:
         # load the selected image
         image = cv2.imdecode(np.frombuffer(uploaded_file.read(), np.unit8), cv2.IMREAD_COLOR)
         
@@ -61,6 +61,6 @@ def main():
         st.image(skewed, caption="Skewed Image", channels="BGR")
 
 if __name__ == "__main__":
-    main()
+    def main()
         
      
