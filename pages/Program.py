@@ -1,7 +1,6 @@
 
 import numpy as np
 import streamlit as st
-import pandas as pd
 
 
 # Function to apply rotation
@@ -39,10 +38,6 @@ def main():
     # Upload an image file
     uploaded_file = st.file_uploader("Choose an image...", type=["png", "jpeg", "jpg"])
     
-    if uploaded_file is not None:
-        # Load the selected image
-        image = pd.imdecode(np.frombuffer(uploaded_file.read(), np.uint8), pd.IMREAD_COLOR)
-        
         if image is None:
             st.error("Failed to load the image.")
             return
