@@ -61,6 +61,6 @@ def main():
         st.image(skewed, caption="Skewed Image", channels="BGR")
 
 if __name__ == "__main__":
-    def main()
+    def main():
         
      
