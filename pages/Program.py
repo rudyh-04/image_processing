@@ -1,4 +1,4 @@
-
+import cv2
 import numpy as np
 import streamlit as st
 
@@ -39,7 +39,7 @@ def main():
     
     if uploaded_file is not None:
         # Load the selected image
-        image = np.imdecode(np.frombuffer(uploaded_file.read(), np.uint8), np.IMREAD_COLOR)
+        image = cv2.imdecode(np.frombuffer(uploaded_file.read(), np.uint8), cv2.IMREAD_COLOR)
         
         if image is None:
             st.error("Failed to load the image.")
