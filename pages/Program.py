@@ -41,7 +41,7 @@ def main():
     
     if uploaded_file is not None:
         # Load the selected image
-        image = cv2.imdecode(np.frombuffer(uploaded_file.read(), np.uint8), cv2.IMREAD_COLOR)
+        image = pd.imdecode(np.frombuffer(uploaded_file.read(), np.uint8), pd.IMREAD_COLOR)
         
         if image is None:
             st.error("Failed to load the image.")
