@@ -39,7 +39,7 @@ def main():
     # Upload an image file
     uploaded_file = st.file_uploader("Choose an image...", type=["png", "jpeg", "jpg"])
 
-    if uploaded_file is not none:
+    if uploaded_file is not:
         # load the selected image
         image = cv2.imdecode(np.frombuffer(uploaded_file.read(), np.unit8), cv2.IMREAD_COLOR)
         
