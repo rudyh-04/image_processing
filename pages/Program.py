@@ -1,7 +1,8 @@
 
 import numpy as np
 import streamlit as st
-import cv2 # Pastikan untuk mengimpor opencv
+import pandas as pd
+import matplotlib
 
 # Function to apply rotation
 def rotate_image(image, angle):
