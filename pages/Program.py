@@ -1,4 +1,5 @@
 
+
 import numpy as np
 import streamlit as st
 
@@ -61,5 +62,6 @@ def main():
 
 if __name__ == "__main__":
         print ("No file selected. Exiting.")
+    main()
         
      
