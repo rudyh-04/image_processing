@@ -2,7 +2,7 @@
 import numpy as np
 import streamlit as st
 import pandas as pd
-import matplotlib
+
 
 # Function to apply rotation
 def rotate_image(image, angle):
